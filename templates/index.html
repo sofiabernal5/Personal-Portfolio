@@ -1,0 +1,45 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sofia Bernal| Portfolio</title>
+    <!-- Link to Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/projects">Projects</a></li> <!-- Correct Flask route -->
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id = "name">
+        <h1> SOFIA BERNAL</h1>
+    </section>
+
+    <section id="home">
+        <h2>Welcome to My Portfolio</h2>
+        <p>Hi, I'm Sofia Bernal, I am a third year Computer Science student at Florida State University. Welcome to my portfolio! </p>
+        <img src="{{ url_for('static', filename='images/portrait.jpeg') }}" alt="Sofia-Bernal">
+    </section>
+
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <p>Email: your-email@example.com</p>
+        <p>LinkedIn: <a href="https://linkedin.com/in/your-profile">LinkedIn</a></p>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Your Name. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
