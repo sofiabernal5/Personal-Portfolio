@@ -1,40 +1,186 @@
+<!-- templates/projects.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sofia Bernal | Portfolio</title>
-
+    <title>Sofia Bernal | Projects</title>
     <!-- Link to Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-
-    <!-- Link to your main CSS file -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='projects.css') }}">
-
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-
-    <!-- Projects Section -->
-    <section id="projects">
-        <h2>My Projects</h2>
-
-        <!-- Project 1 -->
-        <div class="project">
-            <h3>Project 1</h3>
-            <p>Short description of Project 1.</p>
-            <img src="{{ url_for('static', filename='images/project1.jpg') }}" alt="Project 1">
-            <a href="link-to-project1">View Project</a>
+    <header>
+        <div class="container">
+            <h1 class="logo">SB</h1>
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/projects" class="active">Projects</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                </ul>
+            </nav>
         </div>
+    </header>
 
-        <!-- Project 2 -->
-        <div class="project">
-            <h3>Project 2</h3>
-            <p>Short description of Project 2.</p>
-            <img src="{{ url_for('static', filename='images/project2.jpg') }}" alt="Project 2">
-            <a href="link-to-project2">View Project</a>
+    <section id="projects-header">
+        <div class="container">
+            <h1>My Projects</h1>
+            <p>A showcase of my technical work and personal endeavors</p>
         </div>
-
     </section>
 
+    <section id="projects-grid">
+        <div class="container">
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="web">Web Development</button>
+                <button class="filter-btn" data-filter="data">Data Science</button>
+                <button class="filter-btn" data-filter="mobile">Mobile Apps</button>
+            </div>
+
+            <div class="projects-container">
+                <!-- Project 1 -->
+                <div class="project-item" data-category="web data">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="{{ url_for('static', filename='images/project1.jpg') }}" alt="Data Analysis Platform">
+                        </div>
+                        <div class="project-details">
+                            <h3>Data Analysis Platform</h3>
+                            <div class="project-tags">
+                                <span>Python</span>
+                                <span>Flask</span>
+                                <span>Data Science</span>
+                            </div>
+                            <p>A comprehensive platform for analyzing and visualizing complex datasets using Python and Flask. Features include data cleaning, statistical analysis, and interactive visualization dashboards.</p>
+                            <div class="project-links">
+                                <a href="https://github.com/sofiabernal/data-analysis-platform" target="_blank" class="project-link"><i class="fab fa-github"></i> View Code</a>
+                                <a href="https://data-analysis-platform.herokuapp.com" target="_blank" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-item" data-category="web data">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="{{ url_for('static', filename='images/project2.jpg') }}" alt="Machine Learning Model">
+                        </div>
+                        <div class="project-details">
+                            <h3>Machine Learning Image Recognition</h3>
+                            <div class="project-tags">
+                                <span>TensorFlow</span>
+                                <span>JavaScript</span>
+                                <span>API</span>
+                            </div>
+                            <p>An image recognition system built using TensorFlow and deployed as a web application. Users can upload images and the system classifies them into predefined categories with high accuracy.</p>
+                            <div class="project-links">
+                                <a href="https://github.com/sofiabernal/image-recognition" target="_blank" class="project-link"><i class="fab fa-github"></i> View Code</a>
+                                <a href="https://image-recognition-ml.herokuapp.com" target="_blank" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-item" data-category="mobile">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="{{ url_for('static', filename='images/project3.jpg') }}" alt="Fitness Tracker App">
+                        </div>
+                        <div class="project-details">
+                            <h3>Fitness Tracker Mobile App</h3>
+                            <div class="project-tags">
+                                <span>React Native</span>
+                                <span>Firebase</span>
+                                <span>Mobile Development</span>
+                            </div>
+                            <p>A comprehensive fitness tracking mobile application that allows users to track workouts, set goals, and monitor progress. Features include custom workout plans, progress charts, and social sharing.</p>
+                            <div class="project-links">
+                                <a href="https://github.com/sofiabernal/fitness-tracker-app" target="_blank" class="project-link"><i class="fab fa-github"></i> View Code</a>
+                                <a href="https://play.google.com/store/apps/details?id=com.sofiabernal.fitnesstracker" target="_blank" class="project-link"><i class="fas fa-external-link-alt"></i> Download App</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="project-item" data-category="web">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="{{ url_for('static', filename='images/project4.jpg') }}" alt="E-commerce Platform">
+                        </div>
+                        <div class="project-details">
+                            <h3>E-commerce Platform</h3>
+                            <div class="project-tags">
+                                <span>React</span>
+                                <span>Node.js</span>
+                                <span>MongoDB</span>
+                            </div>
+                            <p>A fully functional e-commerce platform with user authentication, product listings, shopping cart, and payment integration. Built with the MERN stack and featuring responsive design.</p>
+                            <div class="project-links">
+                                <a href="https://github.com/sofiabernal/ecommerce-platform" target="_blank" class="project-link"><i class="fab fa-github"></i> View Code</a>
+                                <a href="https://shop-platform-demo.herokuapp.com" target="_blank" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="more-projects">
+        <div class="container">
+            <h2 class="section-title">More Projects on GitHub</h2>
+            <p>Check out my GitHub repository for more projects and code samples</p>
+            <a href="https://github.com/sofiabernal" target="_blank" class="btn primary-btn"><i class="fab fa-github"></i> View GitHub Profile</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Sofia Bernal. All rights reserved.</p>
+            <div class="social-links">
+                <a href="https://linkedin.com/in/sofia-bernal" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/sofiabernal" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="mailto:sofia.bernal@example.com"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple filtering functionality for projects
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const projectItems = document.querySelectorAll('.project-item');
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    filterBtns.forEach(btn => btn.classList.remove('active'));
+                    
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                    
+                    // Get filter value
+                    const filterValue = this.getAttribute('data-filter');
+                    
+                    // Filter projects
+                    projectItems.forEach(item => {
+                        if (filterValue === 'all' || item.getAttribute('data-category').includes(filterValue)) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
 </body>
 </html>

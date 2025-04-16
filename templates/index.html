@@ -4,42 +4,156 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sofia Bernal| Portfolio</title>
+    <title>Sofia Bernal | Portfolio</title>
     <!-- Link to Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
-
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <header>
-        <nav>
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/projects">Projects</a></li> <!-- Correct Flask route -->
-                <li><a href="/contact">Contact</a></li>
-            </ul>
-        </nav>
+        <div class="container">
+            <h1 class="logo">SB</h1>
+            <nav>
+                <ul>
+                    <li><a href="/" class="active">Home</a></li>
+                    <li><a href="/projects">Projects</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <section id = "name">
-        <h1> SOFIA BERNAL</h1>
+    <section id="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>SOFIA BERNAL</h1>
+                <h2>Computer Science Student & Developer</h2>
+                <p>Creating innovative solutions through code</p>
+                <div class="hero-buttons">
+                    <a href="/projects" class="btn primary-btn">View Projects</a>
+                    <a href="{{ url_for('static', filename='files/SOFIA-BERNAL.pdf') }}" class="btn secondary-btn" download>Download Resume</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="{{ url_for('static', filename='images/portrait.jpeg') }}" alt="Sofia Bernal">
+            </div>
+        </div>
     </section>
 
-    <section id="home">
-        <h2>Welcome to My Portfolio</h2>
-        <p>Hi, I'm Sofia Bernal, I am a third year Computer Science student at Florida State University. Welcome to my portfolio! </p>
-        <img src="{{ url_for('static', filename='images/portrait.jpeg') }}" alt="Sofia-Bernal">
+    <section id="featured-projects">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="{{ url_for('static', filename='images/sofia_express.jpeg') }}" alt="Sofia Express">
+                    </div>
+                    <div class="project-info">
+                        <h3>Sofia-Express: Ecommerce App</h3>
+                        <p>A comprehensive platform for simulating an ecommerce application using C# and .NET MAUI.</p>
+                        <div class="project-tags">
+                            <span>C#</span>
+                            <span>.NET MAUI</span>
+                            <span>Rider</span>
+                        </div>
+                        <a href="/projects" class="project-link">View Details</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="{{ url_for('static', filename='images/project2.jpg') }}" alt="Project 2">
+                    </div>
+                    <div class="project-info">
+                        <h3>Machine Learning Model</h3>
+                        <p>An image recognition system built using TensorFlow and deployed as a web application.</p>
+                        <div class="project-tags">
+                            <span>TensorFlow</span>
+                            <span>JavaScript</span>
+                            <span>API</span>
+                        </div>
+                        <a href="/projects" class="project-link">View Details</a>
+                    </div>
+                </div>
+            </div>
+            <div class="view-all">
+                <a href="/projects" class="btn primary-btn">View All Projects</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="container">
+            <h2 class="section-title">Skills & Technologies</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3><i class="fas fa-code"></i> Programming Languages</h3>
+                    <ul>
+                        <li>Python</li>
+                        <li>JavaScript</li>
+                        <li>C++</li>
+                        <li>C#</li>
+                        <li>SQLite</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-laptop-code"></i> Web Development</h3>
+                    <ul>
+                        <li>HTML5/CSS3</li>
+                        <li>Flask</li>
+                        <li>React</li>
+                    </ul>
+                    <h4><i class="fas fa-laptop-code"></i> Non-programming language based:</h3>
+                    <ul>
+                        <li>Wix</li>
+                        <li>Go Daddy</li>
+                    </ul>  
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-tools"></i> Tools</h3>
+                    <ul>
+                        <li>Git</li>
+                        <li>Rider</li>
+                        <li>VS Code</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </section>
 
     <section id="contact">
-        <h2>Contact Me</h2>
-        <p>Email: your-email@example.com</p>
-        <p>LinkedIn: <a href="https://linkedin.com/in/your-profile">LinkedIn</a></p>
+        <div class="container">
+            <h2 class="section-title">Let's Connect</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <p>sofia.bernal@example.com</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-linkedin"></i>
+                        <p><a href="https://linkedin.com/in/sofia-bernal" target="_blank">linkedin.com/in/sofia-bernal</a></p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-github"></i>
+                        <p><a href="https://github.com/sofiabernal" target="_blank">github.com/sofiabernal</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
     <footer>
-        <p>&copy; 2025 Your Name. All rights reserved.</p>
+        <div class="container">
+            <p>&copy; 2025 Sofia Bernal. All rights reserved.</p>
+            <div class="social-links">
+                <a href="https://linkedin.com/in/sofia-bernal" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/sofiabernal" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="mailto:sofia.bernal@example.com"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
     </footer>
-
 </body>
 </html>
