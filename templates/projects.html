@@ -32,7 +32,7 @@
         </div>
     </section>
 
-    <section id="projects-grid">
+    <section id="projects-grid" class="scroll-animation">
         <div class="container">
             <div class="filter-buttons">
                 <button class="filter-btn active" data-filter="all">All</button>
@@ -93,49 +93,58 @@
                             <img src="{{ url_for('static', filename='images/no_go.jpeg') }}" alt="Alpha Phi Requirements Calculator">
                         </div>
                         <div class="project-details">
-                            <h3>Alpha Phi Requirements Calculator </h3>
+                            <h3>Alpha Phi Requirements Calculator</h3>
                             <div class="project-tags">
                                 <span>Python</span>
                                 <span>Flask</span>
-                                <span>Mobile Development</span>
+                                <span>Web App</span>
                             </div>
                             <p>An app that quickly calculates the requirements that members have hit in order to see if they are eligible to attend functions.</p>
                             <div class="project-links">
-                                <a href="https://github.com/sofiabernal5/AlphaPhi-NoGo" target="_blank" class="project-link"><i class="fab fa-github"></i> View Code</a>
-                                <a href="https://alphaphi-nogo.onrender.com/" target="_blank" class="project-link"><i class="fab fa-laptop-code"></i>Check it out!</a></p>
+                                <a href="https://github.com/sofiabernal5/AlphaPhi-NoGo" target="_blank" class="project-link">
+                                    <i class="fab fa-github"></i> View Code
+                                </a>
+                                <a href="https://alphaphi-nogo.onrender.com/" target="_blank" class="project-link">
+                                    <i class="fas fa-external-link-alt"></i> Live Demo
+                                </a>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Project 4 -->
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="{{ url_for('static', filename='images/converzio.jpeg') }}" alt="Converzio Mobile">
-                    </div>
-                    <div class="project-info">
-                        <h3>Converzio</h3>
-                        <p>Mobile app for digital avatar creation for businesses </p>
-                        <div class="project-tags">
-                            <span>TypeScript</span>
-                            <span>JavaScript</span>
-                            <span>Node.js</span>
-                            <span>React Native Expo</span>
-                            <span>MySQL</span>
+                <div class="project-item" data-category="mobile">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="{{ url_for('static', filename='images/converzio.jpeg') }}" alt="Converzio Mobile">
                         </div>
-
+                        <div class="project-details">
+                            <h3>Converzio</h3>
+                            <div class="project-tags">
+                                <span>TypeScript</span>
+                                <span>JavaScript</span>
+                                <span>Node.js</span>
+                                <span>React Native Expo</span>
+                                <span>MySQL</span>
+                            </div>
+                            <p>Mobile app for digital avatar creation for businesses</p>
+                            <div class="project-links">
+                                <!-- Add links when available -->
+                            </div>
+                        </div>
                     </div>
                 </div>
-                
             </div>
         </div>
     </section>
 
-    <section id="more-projects">
+    <section id="more-projects" class="scroll-animation">
         <div class="container">
             <h2 class="section-title">More Projects on GitHub</h2>
             <p>Check out my GitHub repository for more projects and code samples</p>
-            <a href="https://github.com/sofiabernal5" target="_blank" class="btn primary-btn"><i class="fab fa-github"></i> View GitHub Profile</a>
+            <a href="https://github.com/sofiabernal5" target="_blank" class="btn primary-btn">
+                <i class="fab fa-github"></i> View GitHub Profile
+            </a>
         </div>
     </section>
 
@@ -150,34 +159,6 @@
         </div>
     </footer>
 
-    <script>
-        // Simple filtering functionality for projects
-        document.addEventListener('DOMContentLoaded', function() {
-            const filterBtns = document.querySelectorAll('.filter-btn');
-            const projectItems = document.querySelectorAll('.project-item');
-
-            filterBtns.forEach(btn => {
-                btn.addEventListener('click', function() {
-                    // Remove active class from all buttons
-                    filterBtns.forEach(btn => btn.classList.remove('active'));
-                    
-                    // Add active class to clicked button
-                    this.classList.add('active');
-                    
-                    // Get filter value
-                    const filterValue = this.getAttribute('data-filter');
-                    
-                    // Filter projects
-                    projectItems.forEach(item => {
-                        if (filterValue === 'all' || item.getAttribute('data-category').includes(filterValue)) {
-                            item.style.display = 'block';
-                        } else {
-                            item.style.display = 'none';
-                        }
-                    });
-                });
-            });
-        });
-    </script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>
